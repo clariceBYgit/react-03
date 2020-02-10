@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
-import withCopyright from './withCopyright'
+import withCopyright from './withCopyright';
+
+@withCopyright
 
 class Another extends Component {
   render() {
@@ -11,4 +13,5 @@ class Another extends Component {
     )
   }
 }
-export default withCopyright(Another)
+// export default withCopyright(Another)
+export default Another
