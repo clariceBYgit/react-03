@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 const withCopyright = (YourComponent) => {
   return class WithCopyright extends Component {
     render () {
-      console.log(this.props)
+      // console.log(this.props)
       return (
         <>
           <YourComponent {...this.props} />
