@@ -18,6 +18,7 @@ class App extends Component {
   }
   render() {
     // console.log(this.props)
+ 
     return (
       <div>
         <ul>
@@ -37,6 +38,7 @@ class App extends Component {
 
           <Route component={Artical} path='/artical' exact />
             {/* 动态路由 类型二   文章详情 */}
+          {/* <Route component={ArticalDetail} path='/artical/:id'/> */}
           <Route component={ArticalDetail} path='/artical/:id'/>
 
           {/* <Route component={Users} path='/users'/> */}
