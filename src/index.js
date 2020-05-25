@@ -3,10 +3,11 @@ import { render } from 'react-dom'
 // import { BrowserRouter as  Router } from 'react-router-dom'
 
 // 使用了Route组件进行渲染的组件，会自动注入history等
-import { HashRouter as  Router, Route } from 'react-router-dom'
-import App from './App'
+// import { HashRouter as  Router, Route } from 'react-router-dom'
+// import App from './App'
 
-
+// PureComponent的使用
+import Purememo from './Purememo'
 
 
 // 组件的生命周期
@@ -94,8 +95,9 @@ class FaCom extends  React.Component {
 
 
 render (
-    
-    <FaCom></FaCom>
+    // 演示PureComponent的demo
+    <Purememo></Purememo>
+    // <FaCom></FaCom>
     // <Router>
     //     <Route component={App} />
     // </Router>
