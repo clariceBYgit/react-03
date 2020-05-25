@@ -8,6 +8,8 @@ import React, { Component, PureComponent } from 'react'
         return nextProps.title !== this.props.title
     }
      */
+
+/*
 class Title extends PureComponent {
     render() {
         console.log('title组件')
@@ -18,7 +20,17 @@ class Title extends PureComponent {
         )
     }
 }
+*/
 
+ //注释以上title组件的代码，使用React.memo代替title组件，让函数组件也拥有PureComponent的功能
+ const Title = React.memo( (props)=> {
+     console.log('title组件')
+    return (
+        <div>
+          标题：  {props.title}
+        </div>
+    )
+ })
 class Count extends Component {
     render() {
         console.log('条数组件')
