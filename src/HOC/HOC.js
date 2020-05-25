@@ -24,6 +24,8 @@ const withLifeCycle = Comp =>{
     }
     return NewComponent
 }
+@withLearn
+@withLifeCycle
  class HOC extends Component {
     render() {
         return (
@@ -36,4 +38,5 @@ const withLifeCycle = Comp =>{
     }
 }
 
-export default withLifeCycle(withLearn(HOC))
+// export default withLifeCycle(withLearn(HOC))
+export default HOC
