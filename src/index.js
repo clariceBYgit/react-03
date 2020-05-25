@@ -5,6 +5,8 @@ import { render } from 'react-dom'
 // 使用了Route组件进行渲染的组件，会自动注入history等
 // import { HashRouter as  Router, Route } from 'react-router-dom'
 // import App from './App'
+//高阶组件
+import HOC from './HOC/HOC.js'
 
 // PureComponent的使用
 import Purememo from './Purememo'
@@ -95,8 +97,10 @@ class FaCom extends  React.Component {
 
 
 render (
+    // 演示高阶组件
+    <HOC title='高阶组件传递的值'></HOC>
     // 演示PureComponent的demo
-    <Purememo></Purememo>
+    // <Purememo></Purememo>
     // <FaCom></FaCom>
     // <Router>
     //     <Route component={App} />
