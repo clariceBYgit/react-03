@@ -7,7 +7,8 @@ import { render } from 'react-dom'
 // import App from './App'
 //高阶组件
 import HOC from './HOC/HOC.js'
-
+// 联系上下文Context
+import ContextTest from './Context'
 // PureComponent的使用
 import Purememo from './Purememo'
 
@@ -97,8 +98,10 @@ class FaCom extends  React.Component {
 
 
 render (
+    // 演示context
+    <ContextTest></ContextTest>
     // 演示高阶组件
-    <HOC title='高阶组件传递的值'></HOC>
+    // <HOC title='高阶组件传递的值'></HOC>
     // 演示PureComponent的demo
     // <Purememo></Purememo>
     // <FaCom></FaCom>
