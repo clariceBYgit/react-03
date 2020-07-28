@@ -1,30 +1,18 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
-// 演示使用上下文 Context
-const { Provider,Consumer } = React.createContext()
-// 创建一个数据源，提供数据
-let store = {
-    name:'易烊千玺',
-    age:'20岁'
-}
-class InFo extends Component {
-    render(){    
+
+/**
+ * 路由：若使用this.props.history.push('/') 的方式，必须是直接子元素，若是孙子元素，则不能使用--------------> 也可以使用一下context的方式进行解决 或是 使用 withRouter队象
+ */
+ 
+const InFo = (props,context) => {
         return (
             // 数据读取
-            <Consumer>
-                { 
-                store => {
-                    return(
-                        <div>
-                            <h2> 姓名：{store.name}</h2>
-                            <h2>年龄：{store.age}</h2>
-                        </div>
-                    )
-                    }
-                }
-            </Consumer>
+           <div>
+               {context.color}
+           </div>
         )
-    }
 }
 function ToolBar() {
     return (
@@ -33,15 +21,28 @@ function ToolBar() {
         </div>
         )
     }
-    export default class index extends Component {
+    export default class ContextTypeDemo extends Component {
+        // getChildContext 是固定方法进行传值 
+        getChildContext(){
+            return{
+                color:'red'
+            }
+        }
         render() {
             return (
+                // 传递数据
                 <div>
-                    {/* 数据提供，将store中的数据传递下去 */}
-                    <Provider value={store}>
-                        <ToolBar></ToolBar>
-                    </Provider>
+                    <ToolBar></ToolBar>
+                    11111
                 </div>
         )
     }
+}
+
+InFo.contextTypes = {
+    color:PropTypes.string
+}
+
+ContextTypeDemo.childContextTypes = {
+    color: PropTypes.string
 }
